@@ -32,7 +32,6 @@ class MyServer < Sinatra::Base
 
   get '/user_phrase' do
     phrase   = Phrases.sample
-    JSON.unparse({ id: position, phrase: phrase })
     system "say -v #{Voices.sample} '#{phrase}'"
   end
 end
