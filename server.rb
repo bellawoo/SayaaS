@@ -5,16 +5,18 @@ require 'pry'
 class MyServer < Sinatra::Base
   enable :logging
 
-  set :bind, "0.0.0.0"
+  # set :bind, "0.0.0.0"
 
   get '/say_hello' do
     system "say 'Hello world'"
   end
 
-  get '/say_aahhh' do
+  get '/say_ah' do
+    system "say 'Go girl its your birthday Open wide I know you are thirsty.'"
   end
 
   post '/new_voice' do
+    
   end
 
   post '/idea/:id' do
