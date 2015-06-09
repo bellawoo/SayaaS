@@ -2,6 +2,12 @@ require 'sinatra/base'
 require 'json'
 require 'pry'
 
+Voices = [
+  "veena",
+  "serena",
+  "ava"
+]
+
 class MyServer < Sinatra::Base
   enable :logging
 
@@ -15,8 +21,12 @@ class MyServer < Sinatra::Base
     system "say 'Go girl its your birthday Open wide I know you are thirsty.'"
   end
 
+  get '/vicki_voice' do
+    system "say -v vicki 'This is Vicki'"
+  end
+
   post '/new_voice' do
-    
+
   end
 
   post '/idea/:id' do
