@@ -15,10 +15,6 @@ class MyServer < Sinatra::Base
 
   set :bind, "0.0.0.0"
 
-  get '/say_hello' do
-    system "say 'Hello world'"
-  end
-
   get '/say_ah' do
     system "say 'Go girl its your birthday Open wide I know you are thirsty.'"
   end
@@ -40,28 +36,6 @@ class MyServer < Sinatra::Base
     JSON.unparse({ id: position, phrase: phrase })
     system "say -v #{Voices.sample} '#{phrase}'"
   end
-
-  # List of all ideas
-  # get '/idea_list' do
-  #   headers["Content-Type"] = "application/json"
-  #   JSON.unparse Database
-  # end
-
-  # post '/new_idea' do
-  #   Database.push params[:idea]
-  #   response = { status: :ok, id: (Database.length - 1) }
-  #   JSON.unparse response
-  # end
-
-  # get '/idea/:id' do
-  #   position = params[:id].to_i
-  #   idea     = Database[position]
-  #   JSON.unparse({ id: position, idea: idea })
-  # end
-
-  # get '/idea' do
-  #   Database.sample
-  # end
 end
 
 MyServer.run!
