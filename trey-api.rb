@@ -1,10 +1,10 @@
 require 'httparty'
 
 class TreyAPI
-  IP = File.read "./ip"
+  # IP = File.read "./ip"
 
   include HTTParty
-  base_uri IP
+  base_uri "10.1.10.33:4567"
 
   def say_ah
     TreyAPI.get("/say_ah")
