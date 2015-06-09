@@ -13,7 +13,7 @@ Don't like Trey Songz? Pick a different voice:
 
 
 Tell the voices what you weant to hear:
-```POST /new_phrase```
+```POST /new_phrase/:phrase```
 
 
 Have the voices say what you submitted (maybe, we'll see):

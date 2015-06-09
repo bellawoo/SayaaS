@@ -1,4 +1,5 @@
 require 'httparty'
+require 'URI'
 
 class TreyAPI
   # IP = File.read "./ip"
@@ -15,7 +16,7 @@ class TreyAPI
   end
 
   def add_phrase submission
-    phrase = submission.to_sym
+    phrase = URI.escape(submission)
     TreyAPI.post("/new_phrase/#{phrase}")    
   end
 
@@ -28,4 +29,4 @@ end
 
 v = TreyAPI.new
 
-v.add_phrase("Say this now.")
+v.add_phrase("Say this now")
