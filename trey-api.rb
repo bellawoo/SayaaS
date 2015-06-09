@@ -1,5 +1,5 @@
 require 'httparty'
-require 'URI'
+
 
 class TreyAPI
   # IP = File.read "./ip"
@@ -23,10 +23,11 @@ class TreyAPI
       # GithubAPI.get("/orgs/#{org_name}/members")
 
   def random_sub_and_voice
-    TreyAPI.get("/user_phrase/:id")    
+    TreyAPI.get("/user_phrase")    
   end
 end
 
 v = TreyAPI.new
 
 v.add_phrase("Say this now")
+v.random_sub_and_voice
