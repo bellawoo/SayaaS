@@ -38,6 +38,7 @@ class MyServer < Sinatra::Base
     position = params[:id].to_i
     phrase   = Phrases[position]
     JSON.unparse({ id: position, phrase: phrase })
+    system "say '#{phrase}'"
   end
 
   # List of all ideas
