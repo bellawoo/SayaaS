@@ -11,6 +11,15 @@ class MyServer < Sinatra::Base
     system "say 'Hello world'"
   end
 
+  get '/say_aahhh' do
+  end
+
+  post '/new_voice' do
+  end
+
+  post '/idea/:id' do
+  end
+
   # List of all ideas
   get '/idea_list' do
     headers["Content-Type"] = "application/json"
