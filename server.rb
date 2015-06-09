@@ -21,16 +21,11 @@ class MyServer < Sinatra::Base
     system "say 'Go girl its your birthday Open wide I know you are thirsty.'"
   end
 
-  get '/vicki_voice' do
-    system "say -v vicki 'This is Vicki'"
+  get '/say_ah/random' do
+    random_woman = Voices.sample
+    system "say -v #{random_woman} 'Go girl its your birthday Open wide I know you are thirsty.'"
   end
 
-  post '/new_voice' do
-
-  end
-
-  post '/idea/:id' do
-  end
 
   # List of all ideas
   get '/idea_list' do
