@@ -24,7 +24,7 @@ class MyServer < Sinatra::Base
     system "say -v #{random_woman} 'Go girl its your birthday Open wide I know you are thirsty.'"
   end
 
-  post '/new_phrase' do
+  post '/new_phrase/:phrase' do
     Phrases.push params[:phrase]
     response = {status: :ok, id: (Phrases.length - 1)}
     JSON.unparse response
